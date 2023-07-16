@@ -1,4 +1,9 @@
-import { bubbleSort1, bubbleSort2, bubbleSort3 } from './bubbleSort'
+import {
+  bubbleSort1,
+  bubbleSort2,
+  bubbleSort3,
+  cocktailSort,
+} from './bubbleSort'
 
 function shuffle(a: number[]) {
   let len = a.length
@@ -19,7 +24,7 @@ function test(sortFn: (array: number[]) => void) {
       array[i] = i
     }
   }
-  console.log('=========')
+  console.warn('===========================', sortFn.name)
   console.time('部分有序的情况')
   sortFn(array)
   console.timeEnd('部分有序的情况')
@@ -32,6 +37,10 @@ function test(sortFn: (array: number[]) => void) {
   // console.log('完全乱序的情况', sortFn.name, Date.now() - start)
 }
 
-test(bubbleSort1)
-test(bubbleSort2)
-test(bubbleSort3)
+// test(bubbleSort1)
+// test(bubbleSort2)
+// test(bubbleSort3)
+test(cocktailSort)
+
+// cocktailSort([2, 3, 4, 5, 1])
+// cocktailSort([2, 3, 11, 4, 5, 1, 6, 7])
