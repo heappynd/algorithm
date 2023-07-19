@@ -13,7 +13,7 @@ export function bubbleSort1(array: number[]) {
       }
     }
   }
-  console.log(array)
+  return array
 }
 
 /**
@@ -34,7 +34,6 @@ export function bubbleSort2(array: number[]) {
       break
     }
   }
-  console.log(array)
 }
 
 /**
@@ -59,7 +58,6 @@ export function bubbleSort3(array: number[]) {
     }
     k = swapPos
   }
-  console.log(array)
 }
 
 export function cocktailSort(array: number[]) {
@@ -116,5 +114,5 @@ export function cocktailSort(array: number[]) {
     left = index
   }
 
-  console.log('array', array)
+  return array
 }

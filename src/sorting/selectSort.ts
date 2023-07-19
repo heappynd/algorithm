@@ -54,9 +54,9 @@ function selectSort(array: number[]) {
   //   console.log(array)
 }
 
-selectSort([11, 5, 2, 1, 3, 4, 6])
+// selectSort([11, 5, 2, 1, 3, 4, 6])
 
-function selectSort2(array: number[]) {
+export function selectSort2(array: number[]) {
   let min = 0
   let max = 0
   for (let i = 1; i < array.length; i++) {
@@ -69,7 +69,7 @@ function selectSort2(array: number[]) {
   }
   swap(array, min, 0)
   swap(array, max, 6)
-  console.log(array)
+  // console.log(array)
 
   min = 1
   max = 1
@@ -84,6 +84,8 @@ function selectSort2(array: number[]) {
 
   swap(array, min, 1)
   swap(array, max, 5)
-  console.log(array)
+  // console.log(array)
+
+  return array
 }
-selectSort2([11, 5, 2, 1, 3, 4, 6])
+// selectSort2([11, 5, 2, 1, 3, 4, 6])
