@@ -1,32 +1,50 @@
-import { bench, describe, expect } from 'vitest'
+import { bench, describe } from 'vitest'
 import { cocktailSort } from '../bubbleSort'
+import { insertSort1, shellSort, shellSort2, shellSort3 } from '../insertSort'
+
+function getSortedArray() {
+  return Array.from({ length: 10000 }, (_, index) => index)
+}
+
+function getUnsortedArray() {
+  return Array.from(
+    { length: 10000 },
+    () => Math.floor(Math.random() * 10000) + 1
+  )
+}
 
 describe('sort a completely sorted array', () => {
   bench('bubbleSort', () => {
-    const input = Array.from({ length: 10000 }, (_, index) => index + 1)
-    const sortedArray = cocktailSort(input)
-    expect(sortedArray).toEqual(input)
+    cocktailSort(getSortedArray())
+  })
+  bench('insertSort1', () => {
+    insertSort1(getSortedArray())
+  })
+  bench('shellSort', () => {
+    shellSort(getSortedArray())
+  })
+  bench('shellSort2', () => {
+    shellSort2(getSortedArray())
+  })
+  bench('shellSort3', () => {
+    shellSort3(getSortedArray())
   })
 })
 
 describe('sort a completely unsorted array', () => {
   bench('bubbleSort', () => {
-    const input = Array.from(
-      { length: 10000 },
-      () => Math.floor(Math.random() * 10000) + 1
-    )
-    const expectedOutput = [...input].sort((a, b) => a - b)
-    const sortedArray = cocktailSort(input)
-    expect(sortedArray).toEqual(expectedOutput)
+    cocktailSort(getUnsortedArray())
+  })
+  bench('insertSort1', () => {
+    insertSort1(getUnsortedArray())
+  })
+  bench('shellSort', () => {
+    shellSort(getUnsortedArray())
+  })
+  bench('shellSort2', () => {
+    shellSort2(getUnsortedArray())
+  })
+  bench('shellSort3', () => {
+    shellSort3(getUnsortedArray())
   })
 })
-
-// bench('should correctly sort a completely unsorted array', () => {
-//   const input = Array.from(
-//     { length: 10000 },
-//     () => Math.floor(Math.random() * 10000) + 1
-//   )
-//   const expectedOutput = [...input].sort((a, b) => a - b)
-//   const sortedArray = bubbleSort1(input)
-//   expect(sortedArray).toEqual(expectedOutput)
-// })

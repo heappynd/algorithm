@@ -34,6 +34,7 @@ export function bubbleSort2(array: number[]) {
       break
     }
   }
+  return array
 }
 
 /**
@@ -58,39 +59,13 @@ export function bubbleSort3(array: number[]) {
     }
     k = swapPos
   }
+  return array
 }
 
 export function cocktailSort(array: number[]) {
-  // let left = 0
-  // let right = array.length - 1
-  // let index = left
-  // let i: number
-
-  // while (right > left) {
-  //   let isSorted = false
-  //   for (i = left; i < right; i++) {
-  //     if (array[i] > array[i + 1]) {
-  //       swap(array, i, i + 1)
-  //       index = i
-  //       isSorted = true
-  //     }
-  //   }
-  //   right = index
-  //   for (i = right; i > left; i--) {
-  //     if (array[i] < array[i - 1]) {
-  //       swap(array, i, i - 1)
-  //       index = i
-  //       isSorted = true
-  //     }
-  //   }
-  //   left = index
-  //   if (!isSorted) {
-  //     break
-  //   }
-  // }
   let left = 0
   let right = array.length - 1
-  // const n = array.length
+
   let index = left // ! 临时变量
 
   while (right > left) {
@@ -104,8 +79,6 @@ export function cocktailSort(array: number[]) {
     right = index
     // -1 -> len-1
     for (let i = right; i > left; i--) {
-      // console.log(array[i], '<', array[i - 1])
-
       if (array[i] < array[i - 1]) {
         swap(array, i, i - 1)
         index = i
