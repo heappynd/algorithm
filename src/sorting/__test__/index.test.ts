@@ -8,6 +8,12 @@ import {
   shellSort2,
   shellSort3,
 } from '../insertSort'
+// import { mergeSort } from '../mergeSort'
+import {
+  mergeSortObject,
+  mergeSortObject2,
+  mergeSortSimple,
+} from '../mergeSortObject'
 
 describe('sorting', () => {
   it.each([
@@ -17,13 +23,16 @@ describe('sorting', () => {
     shellSort,
     shellSort2,
     shellSort3,
+    mergeSortObject,
+    mergeSortObject2,
+    mergeSortSimple,
   ])('should correctly sort an array of numbers %o', (sortFn) => {
     const input = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
     const expectedOutput = [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
 
-    const sortedArray = sortFn(input)
+    sortFn(input)
 
-    expect(sortedArray).toEqual(expectedOutput)
+    expect(input).toEqual(expectedOutput)
   })
 })
 
