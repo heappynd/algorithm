@@ -1,15 +1,17 @@
-import { List } from './linked-list'
+import { Tree } from './tree'
 
-let list = new List()
+const t = new Tree()
 
+// debugger
+t.insert(1)
+t.insert(2)
+t.insert(3)
+t.insert(4)
+t.insert(5)
+t.insert(6)
+t.insert(7)
 
-list.insertAt(0, 111)
-list.insertAt(1, 222)
-list.insertAt(2, 333)
+debugger
+t.remove(2)
 
-console.log('list', list)
-console.log(list.findIndex(2))
-
-list.forEach((v) => {
-  console.log(v)
-})
+console.log('t', t)
