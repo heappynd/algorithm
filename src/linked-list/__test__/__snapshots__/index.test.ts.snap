@@ -1,0 +1,70 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`linked-list > List 1`] = `
+List {
+  "head": null,
+  "length": 0,
+}
+`;
+
+exports[`linked-list > List 2`] = `
+List {
+  "head": Node {
+    "data": 100,
+    "next": null,
+  },
+  "length": 1,
+}
+`;
+
+exports[`linked-list > List 3`] = `
+List {
+  "head": Node {
+    "data": 100,
+    "next": Node {
+      "data": 200,
+      "next": null,
+    },
+  },
+  "length": 2,
+}
+`;
+
+exports[`linked-list > List 4`] = `
+List {
+  "head": Node {
+    "data": 50,
+    "next": Node {
+      "data": 100,
+      "next": Node {
+        "data": 200,
+        "next": null,
+      },
+    },
+  },
+  "length": 3,
+}
+`;
+
+exports[`linked-list > List 5`] = `
+List {
+  "head": Node {
+    "data": 100,
+    "next": Node {
+      "data": 200,
+      "next": null,
+    },
+  },
+  "length": 2,
+}
+`;
+
+exports[`linked-list > List 6`] = `
+List {
+  "head": Node {
+    "data": 100,
+    "next": null,
+  },
+  "length": 1,
+}
+`;
