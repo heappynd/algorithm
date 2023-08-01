@@ -1,17 +1,15 @@
-import { Tree } from './tree'
+import { UnionFind } from './union-find'
 
-const t = new Tree()
+const u = new UnionFind(10)
 
-// debugger
-t.insert(1)
-t.insert(2)
-t.insert(3)
-t.insert(4)
-t.insert(5)
-t.insert(6)
-t.insert(7)
+console.log(u)
 
-debugger
-t.remove(2)
+console.log(u.query(2))
 
-console.log('t', t)
+u.merge(5, 6)
+u.merge(1, 2)
+u.merge(2, 3)
+u.merge(1, 4)
+u.merge(1, 5)
+
+console.log('u', u)
